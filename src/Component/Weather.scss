@@ -1,0 +1,136 @@
+
+.weather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    .card{
+        border-radius: 18px;
+        height: 47vh;
+        width: 45vh;
+        background-color: white;
+        box-shadow:  -20px 20px 60px #b0b0b0,
+         20px -20px 60px #35B0AF;
+        padding: 3vh;
+        .sec0{
+            border-radius: 18px;
+            height: 10%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2vh;
+            form{
+                display: flex;
+                justify-content: center;
+                input{
+                    display: flex;
+                    border-radius: 1.3em;
+                    border: none;
+                    background-color: rgb(161, 245, 245);
+                    width: 15em;
+                    padding-left: 1em;
+                    margin-left: 2vh;
+                    font-size: 1em;
+                    font-weight: 400;
+                }
+                button{
+                    margin-left: 2vh;
+                    display: flex;
+                    background-color: rgb(161, 245, 245);
+                    border: none;
+                    padding: 0.3em;
+                    border-radius: 50%;
+                    display: flex;
+                    margin-right: 2vh;
+                    cursor: pointer;
+                }
+            }
+        }
+        .sec1{
+            border-radius: 18px;
+            height: 10%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .location{
+                align-items: center;
+                margin-left: 2vh;
+                display: flex;
+                top: 50px;
+                p{
+                    margin-left: 0.4em;
+                    font-size:3vh;
+                    font-weight: 600;
+                }
+            }
+            // .search{
+            //     background-color: rgb(161, 245, 245);;
+            //     padding: 0.3em;
+            //     border-radius: 50%;
+            //     display: flex;
+            //     margin-right: 2vh;
+            // }
+
+        }
+        .sec2{
+            border-radius: 18px;
+            height: 35%;
+            display: flex;
+            justify-content: center;
+            // background-color: red;
+            align-items: center;
+            img{
+                // display: flex;
+                height: 80%;
+            }
+        }
+        .sec3{
+            border-radius: 18px;
+            height: 25%;
+            // background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .temp{
+                font-size: 4vh;
+                font-weight: 600;
+            }
+            .desc{
+                font-size: 2.5vh;
+                font-weight: 700;
+            }
+        }
+        .sec4{
+            border-radius: 18px;
+            height: 20%;
+            // background-color: teal;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .humidity{
+                margin-left: 2vh;
+                display: flex;
+                align-items: center;
+                p{
+                    font-size:3vh;
+                    font-weight: 600;
+                    margin-left: 0.4em;
+                }
+            }
+            .wind{
+                display: flex;
+                align-items: center;
+                margin-right:2vh;
+                p{
+                    font-size:3vh;
+                    font-weight: 600;
+                    margin-left: 0.4em;
+                }
+            }
+        }
+    }
+}
