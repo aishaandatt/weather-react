@@ -21,7 +21,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 2vh;
-            form{
+            .form{
                 display: flex;
                 justify-content: center;
                 input{
@@ -57,7 +57,6 @@
             justify-content: center;
             .location{
                 align-items: center;
-                margin-left: 2vh;
                 display: flex;
                 top: 50px;
                 p{
@@ -66,31 +65,20 @@
                     font-weight: 600;
                 }
             }
-            // .search{
-            //     background-color: rgb(161, 245, 245);;
-            //     padding: 0.3em;
-            //     border-radius: 50%;
-            //     display: flex;
-            //     margin-right: 2vh;
-            // }
-
         }
         .sec2{
             border-radius: 18px;
             height: 35%;
             display: flex;
             justify-content: center;
-            // background-color: red;
             align-items: center;
             img{
-                // display: flex;
                 height: 80%;
             }
         }
         .sec3{
             border-radius: 18px;
             height: 25%;
-            // background-color: pink;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -107,7 +95,6 @@
         .sec4{
             border-radius: 18px;
             height: 20%;
-            // background-color: teal;
             display: flex;
             align-items: center;
             justify-content: space-between;
