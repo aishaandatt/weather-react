@@ -7,17 +7,15 @@ import { BiSearchAlt } from 'react-icons/bi';
 import { IconContext } from "react-icons";
 import { FaWater } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
-const Weather = () => {
+const Weather = (props) => {
   const [apiData, setApiData] = useState({});
-  const [getState, setGetState] = useState('delhi');
-  const [state, setState] = useState('delhi');
+  const [getState, setGetState] = useState('');
+  const [state, setState] = useState(props.data);
   const apiKey = '04917fbf4817750e09b47a725734c8ec'
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}`;
-
   const inputHandler = (event) => {
     setGetState(event.target.value);
   };
-
   const submitHandler = () => {
     setState(getState);
   };
@@ -35,7 +33,7 @@ const Weather = () => {
       .then((res) => res.json())
       .then((data) => setApiData(data));
     console.log(apiData)
-  }, [apiUrl]);
+  }, [apiUrl, state]);
   return (
     <IconContext.Provider value={{ size: "3.4vh" }}>
       {apiData.main ? (
