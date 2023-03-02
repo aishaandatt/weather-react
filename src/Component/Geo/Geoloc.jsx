@@ -9,6 +9,7 @@ const Geoloc = () => {
     const [getCity, setGetCity] = useState('')
     const [flag, setFlag] = useState(true)
     const [flag2, setFlag2] = useState(true)
+    const [ip, setIP] = useState('');
     const [disp, setDisp] = useState('')
     const apiKey = 'f056515d976a4e22bfe412b791ca04e9'
     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
@@ -37,10 +38,17 @@ const Geoloc = () => {
             setDisp(getCity ? <Weather data={getCity} /> : (<h2>Error</h2>))
         }
     }, [apiUrl, getCity])
+    const getData = async () => {
+        const res = await axios.get('https://geolocation-db.com/json/')
+        console.log(res.data);
+        setIP(res.data.IPv4)
+    }
     useEffect(() => {
-    }, [getCity])
+        getData()
+    }, [ip])
     return (
         <>
+            {ip}
             {disp}
         </>
     )
