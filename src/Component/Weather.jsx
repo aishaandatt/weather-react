@@ -64,7 +64,8 @@ const Weather = (props) => {
             </div> */}
             </div>
             <div className="sec2">
-              <img src='assets/Sunny.svg' alt='' />
+              {/* <img src='assets/Sunny.svg' alt='' /> */}
+              <img src={`http://openweathermap.org/img/wn/${apiData.main ? apiData.weather[0].icon : null}@2x.png`} alt='' />
             </div>
             <div className="sec3">
               <div className='temp'>{kelvinToFarenheit(apiData.main.temp)}°C</div>

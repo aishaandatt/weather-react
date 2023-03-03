@@ -1,11 +1,13 @@
 
 .weather{
+    margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
     .card{
+        margin-top: 0;
         border-radius: 18px;
         height: 47vh;
         width: 45vh;

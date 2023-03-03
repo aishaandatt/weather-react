@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Weather from '../Weather'
+import './Geoloc.scss'
 const Geoloc = () => {
     // const [loc, setLoc] = useState(null)
     const [lat, setLat] = useState(null)
@@ -18,7 +19,15 @@ const Geoloc = () => {
         navigator.geolocation.getCurrentPosition(function (position) {
             setLat(position.coords.latitude)
             setLon(position.coords.longitude)
-        })
+        },
+            function (error) {
+                if (error.code == error.PERMISSION_DENIED) {
+                    console.log("you denied me :-(");
+                    setLat('28.7041')
+                    setLon('77.1025')
+                }
+            }
+        )
         if (lat > 0 && lon > 0 && flag) {
             console.log(lat, lon)
             // fetch(apiUrl2)
@@ -48,7 +57,11 @@ const Geoloc = () => {
     }, [ip])
     return (
         <>
-            {ip}
+            <h2>
+                <span>
+                    Your IP is : {ip}
+                </span>
+            </h2>
             {disp}
         </>
     )
