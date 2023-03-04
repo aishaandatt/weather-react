@@ -7,6 +7,7 @@ const Geoloc = () => {
     const [lat, setLat] = useState(null)
     const [lon, setLon] = useState(null)
     const [city, setCity] = useState('')
+    const [date, setDate] = useState(new Date());
     const [getCity, setGetCity] = useState('')
     const [flag, setFlag] = useState(true)
     const [flag2, setFlag2] = useState(true)
@@ -15,6 +16,23 @@ const Geoloc = () => {
     const apiKey = 'f056515d976a4e22bfe412b791ca04e9'
     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
     const apiUrl2 = `https://apis.mapmyindia.com/advancedmaps/v1/111a93e1b2b99ec3a8ae35db42503402/rev_geocode?lat=${lat}&lng=${lon}`
+    // const toggle = () => {
+    //     if (flag2 === true) {
+    //         setFlag2(false) //to dark
+    //     }
+    //     else if (flag2 === false) {
+    //         setFlag2(true)
+    //     }
+    // }
+    function refreshClock() {
+        setDate(new Date());
+    }
+    useEffect(() => {
+        const timerId = setInterval(refreshClock, 1000);
+        return function cleanup() {
+            clearInterval(timerId);
+        };
+    }, []);
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function (position) {
             setLat(position.coords.latitude)
@@ -61,8 +79,12 @@ const Geoloc = () => {
                 <span>
                     Your IP is : {ip}
                 </span>
+                <span>
+                    Time : {date.toLocaleTimeString()}
+                </span>
             </h2>
             {disp}
+
         </>
     )
 }

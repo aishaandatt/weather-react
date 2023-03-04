@@ -1,19 +1,22 @@
-
+body{
+    background-color: #3e97da;
+    margin: 0; height: 100%; overflow: hidden
+}
 .weather{
     margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    height: 85vh;
     .card{
         margin-top: 0;
         border-radius: 18px;
         height: 47vh;
         width: 45vh;
-        background-color: white;
-        box-shadow:  -20px 20px 60px #b0b0b0,
-         20px -20px 60px #35B0AF;
+        background: linear-gradient(225deg, #3888c4, #42a2e9);
+        box-shadow:  -20px 20px 60px #3580b9,
+                     20px -20px 60px #47aefb;
         padding: 3vh;
         .sec0{
             border-radius: 18px;
@@ -30,7 +33,9 @@
                     display: flex;
                     border-radius: 1.3em;
                     border: none;
-                    background-color: rgb(161, 245, 245);
+                    background: #3e97da;
+                    box-shadow: inset 6px 6px 12px #2f73a6,
+                                inset -6px -6px 12px #4dbbff;
                     width: 15em;
                     padding-left: 1em;
                     margin-left: 2vh;
@@ -40,7 +45,9 @@
                 button{
                     margin-left: 2vh;
                     display: flex;
-                    background-color: rgb(161, 245, 245);
+                    background: #3e97da;
+                    box-shadow:  7px 7px 22px #337cb3,
+                                 -7px -7px 22px #49b2ff;
                     border: none;
                     padding: 0.3em;
                     border-radius: 50%;
@@ -122,4 +129,31 @@
             }
         }
     }
+    
 }
+.dark{
+    background-color: rgb(6, 72, 115);
+    .weather{
+        .card{
+            background: linear-gradient(225deg, #054168, #064d7b);
+            box-shadow:  -20px 20px 60px #053d62,
+                         20px -20px 60px #075384;
+            color: white;
+            .sec0{
+                .form{
+                    input{
+                        background: #064873;
+                        box-shadow: inset 6px 6px 12px #053757,
+                                    inset -6px -6px 12px #07598f;
+                    }
+                    button{
+                        background: #064873;
+                        box-shadow:  7px 7px 22px #053b5e,
+                                     -7px -7px 22px #075588;
+                    }
+                }
+            }
+        }
+    }
+}
+
