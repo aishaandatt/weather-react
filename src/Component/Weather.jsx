@@ -53,60 +53,59 @@ const Weather = (props) => {
     <IconContext.Provider value={{ size: "3.4vh" }}>
       {apiData.main ? (
         <>
-          <div className={`weather ${theme}`}>
-            <div className='card'>
-              <div className="sec0">
-                <div className='search-bar'>
-                  <div className='form'>
-                    <input type='text' value={getState}
-                      onChange={inputHandler}
-                      placeholder="Search..."
-                      onKeyDown={handleKeyDown}
-
-                    />
-                    <button type='submit' onClick={getState ? submitHandler : ''}>
-                      <BiSearchAlt color={theme === 'light' ? 'black' : 'white'} />
-                    </button>
+          <div className="wrapper">
+            <div className={`weather ${theme}`}>
+              <div className='card'>
+                <div className="sec0">
+                  <div className='search-bar'>
+                    <div className='form'>
+                      <input type='text' value={getState}
+                        onChange={inputHandler}
+                        placeholder="Search..."
+                        onKeyDown={handleKeyDown}
+                      />
+                      <button type='submit' onClick={getState ? submitHandler : ''}>
+                        <BiSearchAlt color={theme === 'light' ? 'black' : 'white'} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="sec1">
+                  <div className='location'>
+                    <MdMyLocation color={theme === 'light' ? 'black' : 'white'} />
+                    <p>{apiData.name}</p>
+                  </div>
+                </div>
+                <div className="sec2">
+                  <img src={`http://openweathermap.org/img/wn/${apiData.main ? apiData.weather[0].icon : null}@2x.png`} alt='' />
+                </div>
+                <div className="sec3">
+                  <div className='temp'>{kelvinToFarenheit(apiData.main.temp)} °C</div>
+                  <div className="desc">{apiData.weather[0].description}</div>
+                </div>
+                <div className="sec4">
+                  <div className="humidity">
+                    <FaWater color={theme === 'light' ? 'black' : 'white'} />
+                    <p>{apiData.main.humidity}%</p>
+                  </div>
+                  <div className="wind">
+                    <FiWind color={theme === 'light' ? 'black' : 'white'} />
+                    <p>{apiData.wind.speed} Km/h</p>
                   </div>
                 </div>
               </div>
-              <div className="sec1">
-                <div className='location'>
-                  <MdMyLocation color={theme === 'light' ? 'black' : 'white'} />
-                  <p>{apiData.name}</p>
-                </div>
-                {/* <div className="search">
-              <BiSearchAlt />
-            </div> */}
-              </div>
-              <div className="sec2">
-                {/* <img src='assets/Sunny.svg' alt='' /> */}
-                <img src={`http://openweathermap.org/img/wn/${apiData.main ? apiData.weather[0].icon : null}@2x.png`} alt='' />
-              </div>
-              <div className="sec3">
-                <div className='temp'>{kelvinToFarenheit(apiData.main.temp)} °C</div>
-                <div className="desc">{apiData.weather[0].description}</div>
-              </div>
-              <div className="sec4">
-                <div className="humidity">
-                  <FaWater color={theme === 'light' ? 'black' : 'white'} />
-                  <p>{apiData.main.humidity}%</p>
-                </div>
-                <div className="wind">
-                  <FiWind color={theme === 'light' ? 'black' : 'white'} />
-                  <p>{apiData.wind.speed} Km/h</p>
-                </div>
-              </div>
+            </div>
+            <div className='toggle'>
+              <DarkModeSwitch
+                style={{ marginBottom: '2rem', marginLeft: '1em' }}
+                checked={isDarkMode}
+                onChange={toggleDarkMode}
+                size={50}
+                sunColor={'yellow'}
+                moonColor={'black'}
+              />
             </div>
           </div>
-          <DarkModeSwitch
-            style={{ marginBottom: '2rem', marginLeft: '1em' }}
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-            size={50}
-            sunColor={'yellow'}
-            moonColor={'black'}
-          />
         </>
       ) : (<div className='load'>
         <div>

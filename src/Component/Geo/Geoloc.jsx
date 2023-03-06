@@ -75,15 +75,22 @@ const Geoloc = () => {
     }, [ip])
     return (
         <>
-            <h2>
-                <span>
-                    Your IP is : {ip}
-                </span>
-                <span>
-                    Time : {date.toLocaleTimeString()}
-                </span>
-            </h2>
-            {disp}
+            <div>
+                <div className='top'>
+
+                    <span>
+                        Your IP is : {ip}
+                    </span>
+
+                    <span>
+                        Time : {date.toLocaleTimeString()}
+                    </span>
+                </div>
+                <div className='wea'>
+
+                    {disp}
+                </div>
+            </div>
 
         </>
     )

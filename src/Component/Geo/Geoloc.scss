@@ -1,24 +1,18 @@
-h2{
+div {
+  .top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0;
     margin-top: 1em;
     margin-right: 1em;
     margin-left: 1em;
-    span{
-        padding: 0.4em;
-        background-color: azure;
-        border-radius: 1em;
+    span {
+      height: 100%;
+      padding: 0.4em;
+      background-color: azure;
+      border-radius: 1em;
     }
-}
-.toggle{
-    button{
-            padding: 0.4em;
-            background-color: azure;
-            border-radius: 1em;
-            margin-bottom: 1em;
-            margin-left: 1em;
-            border: none;
-            cursor: pointer;
-    }
+  }
+  .wea {
+  }
 }
